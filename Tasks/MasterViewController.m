@@ -7,8 +7,9 @@
 //
 
 #import "MasterViewController.h"
-#import "DetailViewController.h"
-
+#import "ViewTaskController.h"
+#import "Location.h"
+#import "Task.h"
 @interface MasterViewController ()
 
 @end
@@ -23,6 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    self.navigationItem.title = @"Tasks";
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
@@ -36,11 +38,7 @@
 - (void)insertNewObject:(id)sender {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-        
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+    Task *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
         
     // Save the context.
     NSError *error = nil;
@@ -50,15 +48,23 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewTaskController *taskController = [sb instantiateViewControllerWithIdentifier:@"ViewTaskController"];
+    taskController.managedObjectContext = [self.fetchedResultsController managedObjectContext];
+    taskController.managedTaskObject = newManagedObject;
+    [self.navigationController pushViewController:taskController animated:YES];
 }
 
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([[segue identifier] isEqualToString:@"showViewTaskController"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
+        Task *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+       ViewTaskController *taskController = [segue destinationViewController];
+        taskController.managedTaskObject = object;
+        taskController.managedObjectContext = [self.fetchedResultsController managedObjectContext];
     }
 }
 
@@ -100,8 +106,13 @@
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    Task *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = object.text;
+    if ([object.isOverdue boolValue]) {
+        cell.textLabel.textColor = [UIColor redColor];
+    }else{
+        cell.textLabel.textColor = [UIColor blackColor];
+    }
 }
 
 #pragma mark - Fetched results controller
@@ -114,14 +125,14 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"text" ascending:NO];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -206,4 +217,15 @@
 }
  */
 
+- (IBAction)toolbarFilterAll:(id)sender {
+}
+
+- (IBAction)locationButtonPressed:(id)sender {
+}
+
+- (IBAction)toolbarFilterHiPri:(id)sender {
+}
+
+- (IBAction)toolbarSortOrderChanged:(id)sender {
+}
 @end

@@ -11,11 +11,17 @@
 		BD5932441AFF69BF0035058A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5932431AFF69BF0035058A /* AppDelegate.m */; };
 		BD5932471AFF69BF0035058A /* Tasks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD5932451AFF69BF0035058A /* Tasks.xcdatamodeld */; };
 		BD59324A1AFF69BF0035058A /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5932491AFF69BF0035058A /* MasterViewController.m */; };
-		BD59324D1AFF69BF0035058A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD59324C1AFF69BF0035058A /* DetailViewController.m */; };
 		BD5932501AFF69BF0035058A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD59324E1AFF69BF0035058A /* Main.storyboard */; };
 		BD5932521AFF69BF0035058A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD5932511AFF69BF0035058A /* Images.xcassets */; };
 		BD5932551AFF69BF0035058A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD5932531AFF69BF0035058A /* LaunchScreen.xib */; };
 		BD5932611AFF69BF0035058A /* TasksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5932601AFF69BF0035058A /* TasksTests.m */; };
+		BD5A14C51B00E89200FF7E00 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5A14C41B00E89200FF7E00 /* Location.m */; };
+		BD5A14C81B00E8AF00FF7E00 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5A14C71B00E8AF00FF7E00 /* Task.m */; };
+		BD5A14CE1B02CFDD00FF7E00 /* ViewTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5A14CD1B02CFDD00FF7E00 /* ViewTaskController.m */; };
+		BD5A14D11B03880D00FF7E00 /* EditTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5A14D01B03880D00FF7E00 /* EditTextViewController.m */; };
+		BD5A14D41B038E8E00FF7E00 /* EditPriorityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5A14D31B038E8E00FF7E00 /* EditPriorityViewController.m */; };
+		BD5A14D71B03967E00FF7E00 /* EditLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5A14D61B03967E00FF7E00 /* EditLocationViewController.m */; };
+		BD5A14DA1B04D97D00FF7E00 /* EditDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5A14D91B04D97D00FF7E00 /* EditDateViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,14 +43,26 @@
 		BD5932461AFF69BF0035058A /* Tasks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tasks.xcdatamodel; sourceTree = "<group>"; };
 		BD5932481AFF69BF0035058A /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		BD5932491AFF69BF0035058A /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		BD59324B1AFF69BF0035058A /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		BD59324C1AFF69BF0035058A /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		BD59324F1AFF69BF0035058A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD5932511AFF69BF0035058A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BD5932541AFF69BF0035058A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BD59325A1AFF69BF0035058A /* TasksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD59325F1AFF69BF0035058A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD5932601AFF69BF0035058A /* TasksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TasksTests.m; sourceTree = "<group>"; };
+		BD5A14C31B00E89200FF7E00 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		BD5A14C41B00E89200FF7E00 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		BD5A14C61B00E8AF00FF7E00 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		BD5A14C71B00E8AF00FF7E00 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		BD5A14CC1B02CFDD00FF7E00 /* ViewTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewTaskController.h; sourceTree = "<group>"; };
+		BD5A14CD1B02CFDD00FF7E00 /* ViewTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewTaskController.m; sourceTree = "<group>"; };
+		BD5A14CF1B03880D00FF7E00 /* EditTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTextViewController.h; sourceTree = "<group>"; };
+		BD5A14D01B03880D00FF7E00 /* EditTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTextViewController.m; sourceTree = "<group>"; };
+		BD5A14D21B038E8E00FF7E00 /* EditPriorityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPriorityViewController.h; sourceTree = "<group>"; };
+		BD5A14D31B038E8E00FF7E00 /* EditPriorityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPriorityViewController.m; sourceTree = "<group>"; };
+		BD5A14D51B03967E00FF7E00 /* EditLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditLocationViewController.h; sourceTree = "<group>"; };
+		BD5A14D61B03967E00FF7E00 /* EditLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditLocationViewController.m; sourceTree = "<group>"; };
+		BD5A14D81B04D97D00FF7E00 /* EditDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDateViewController.h; sourceTree = "<group>"; };
+		BD5A14D91B04D97D00FF7E00 /* EditDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDateViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,17 +104,29 @@
 		BD59323D1AFF69BF0035058A /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				BD5A14CC1B02CFDD00FF7E00 /* ViewTaskController.h */,
+				BD5A14CD1B02CFDD00FF7E00 /* ViewTaskController.m */,
 				BD5932421AFF69BF0035058A /* AppDelegate.h */,
 				BD5932431AFF69BF0035058A /* AppDelegate.m */,
 				BD5932481AFF69BF0035058A /* MasterViewController.h */,
 				BD5932491AFF69BF0035058A /* MasterViewController.m */,
-				BD59324B1AFF69BF0035058A /* DetailViewController.h */,
-				BD59324C1AFF69BF0035058A /* DetailViewController.m */,
 				BD59324E1AFF69BF0035058A /* Main.storyboard */,
 				BD5932511AFF69BF0035058A /* Images.xcassets */,
 				BD5932531AFF69BF0035058A /* LaunchScreen.xib */,
 				BD5932451AFF69BF0035058A /* Tasks.xcdatamodeld */,
 				BD59323E1AFF69BF0035058A /* Supporting Files */,
+				BD5A14C31B00E89200FF7E00 /* Location.h */,
+				BD5A14C41B00E89200FF7E00 /* Location.m */,
+				BD5A14C61B00E8AF00FF7E00 /* Task.h */,
+				BD5A14C71B00E8AF00FF7E00 /* Task.m */,
+				BD5A14CF1B03880D00FF7E00 /* EditTextViewController.h */,
+				BD5A14D01B03880D00FF7E00 /* EditTextViewController.m */,
+				BD5A14D21B038E8E00FF7E00 /* EditPriorityViewController.h */,
+				BD5A14D31B038E8E00FF7E00 /* EditPriorityViewController.m */,
+				BD5A14D51B03967E00FF7E00 /* EditLocationViewController.h */,
+				BD5A14D61B03967E00FF7E00 /* EditLocationViewController.m */,
+				BD5A14D81B04D97D00FF7E00 /* EditDateViewController.h */,
+				BD5A14D91B04D97D00FF7E00 /* EditDateViewController.m */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -227,11 +257,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD59324D1AFF69BF0035058A /* DetailViewController.m in Sources */,
+				BD5A14C81B00E8AF00FF7E00 /* Task.m in Sources */,
 				BD59324A1AFF69BF0035058A /* MasterViewController.m in Sources */,
 				BD5932441AFF69BF0035058A /* AppDelegate.m in Sources */,
+				BD5A14D71B03967E00FF7E00 /* EditLocationViewController.m in Sources */,
+				BD5A14DA1B04D97D00FF7E00 /* EditDateViewController.m in Sources */,
+				BD5A14CE1B02CFDD00FF7E00 /* ViewTaskController.m in Sources */,
 				BD5932411AFF69BF0035058A /* main.m in Sources */,
+				BD5A14D11B03880D00FF7E00 /* EditTextViewController.m in Sources */,
+				BD5A14C51B00E89200FF7E00 /* Location.m in Sources */,
 				BD5932471AFF69BF0035058A /* Tasks.xcdatamodeld in Sources */,
+				BD5A14D41B038E8E00FF7E00 /* EditPriorityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +462,7 @@
 				BD5932661AFF69BF0035058A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD5932671AFF69BF0035058A /* Build configuration list for PBXNativeTarget "TasksTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +471,7 @@
 				BD5932691AFF69BF0035058A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
