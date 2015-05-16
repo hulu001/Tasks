@@ -61,27 +61,27 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="All" width="87" id="asW-ZA-5Wj">
+                        <barButtonItem title="All" width="64" id="asW-ZA-5Wj">
                             <connections>
                                 <action selector="toolbarFilterAll:" destination="pGg-6v-bdr" id="gQr-v6-Bpk"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="Location" width="138" id="qFk-ug-SDz">
+                        <barButtonItem title="Location" width="64" id="qFk-ug-SDz">
                             <connections>
                                 <action selector="locationButtonPressed:" destination="pGg-6v-bdr" id="7eU-AR-qo1"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="Hi-Pri" width="115" id="1Pd-gu-odi">
+                        <barButtonItem title="Hi-Pri" width="64" id="1Pd-gu-odi">
                             <connections>
                                 <action selector="toolbarFilterHiPri:" destination="pGg-6v-bdr" id="CHf-iZ-Q3d"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="Asc" width="87" id="z8B-P3-fWK">
+                        <barButtonItem title="Asc" width="64" id="z8B-P3-fWK">
                             <connections>
                                 <action selector="toolbarSortOrderChanged:" destination="pGg-6v-bdr" id="sQs-Ej-A92"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="Dsc" width="110" id="loI-3h-IOe">
+                        <barButtonItem title="Dsc" width="64" id="loI-3h-IOe">
                             <connections>
                                 <action selector="toolbarSortOrderChanged:" destination="pGg-6v-bdr" id="gQE-ff-yAa"/>
                             </connections>

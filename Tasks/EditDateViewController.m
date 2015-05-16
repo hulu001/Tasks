@@ -36,7 +36,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid due date" message:[[error userInfo] valueForKey:@"ErrorString"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         
-        abort();
+        [self.managedObjectContext rollback];
     }else{
         [self.navigationController popViewControllerAnimated:YES];
     }

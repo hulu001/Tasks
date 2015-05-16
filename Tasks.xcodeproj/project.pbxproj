@@ -22,6 +22,7 @@
 		BD5A14D41B038E8E00FF7E00 /* EditPriorityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5A14D31B038E8E00FF7E00 /* EditPriorityViewController.m */; };
 		BD5A14D71B03967E00FF7E00 /* EditLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5A14D61B03967E00FF7E00 /* EditLocationViewController.m */; };
 		BD5A14DA1B04D97D00FF7E00 /* EditDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5A14D91B04D97D00FF7E00 /* EditDateViewController.m */; };
+		BD5CC7AF1B06E9950053C3FA /* LocationTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5CC7AE1B06E9950053C3FA /* LocationTasksViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		BD5A14D61B03967E00FF7E00 /* EditLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditLocationViewController.m; sourceTree = "<group>"; };
 		BD5A14D81B04D97D00FF7E00 /* EditDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDateViewController.h; sourceTree = "<group>"; };
 		BD5A14D91B04D97D00FF7E00 /* EditDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDateViewController.m; sourceTree = "<group>"; };
+		BD5CC7AD1B06E9950053C3FA /* LocationTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTasksViewController.h; sourceTree = "<group>"; };
+		BD5CC7AE1B06E9950053C3FA /* LocationTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTasksViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				BD5A14D61B03967E00FF7E00 /* EditLocationViewController.m */,
 				BD5A14D81B04D97D00FF7E00 /* EditDateViewController.h */,
 				BD5A14D91B04D97D00FF7E00 /* EditDateViewController.m */,
+				BD5CC7AD1B06E9950053C3FA /* LocationTasksViewController.h */,
+				BD5CC7AE1B06E9950053C3FA /* LocationTasksViewController.m */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 				BD5A14D11B03880D00FF7E00 /* EditTextViewController.m in Sources */,
 				BD5A14C51B00E89200FF7E00 /* Location.m in Sources */,
 				BD5932471AFF69BF0035058A /* Tasks.xcdatamodeld in Sources */,
+				BD5CC7AF1B06E9950053C3FA /* LocationTasksViewController.m in Sources */,
 				BD5A14D41B038E8E00FF7E00 /* EditPriorityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

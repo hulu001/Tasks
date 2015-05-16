@@ -11,6 +11,7 @@
 #import "EditPriorityViewController.h"
 #import "EditLocationViewController.h"
 #import "EditDateViewController.h"
+#import "AppDelegate.h"
 @interface ViewTaskController ()
 
 @end
@@ -88,6 +89,39 @@
         EditDateViewController *editDate = [segue destinationViewController];
         editDate.managedObjectContext = self.managedObjectContext;
         editDate.managedTaskObject = self.managedTaskObject;
+    }
+}
+
+#pragma mark table view delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 4) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hi-Pri Tasks" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        NSArray *highPriTasks = self.managedTaskObject.highPriTasks;
+        NSMutableString *message =[[NSMutableString alloc] init];
+        for (Task *theTask in highPriTasks) {
+            [message appendString:theTask.text];
+            [message appendString:@"\n"];
+        }
+        [alert setMessage:message];
+        [alert show];
+    }else if(indexPath.row == 5){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tasks due sooner" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        NSMutableString *message = [[NSMutableString alloc] init];
+        AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+        NSManagedObjectModel *managedObjectModel = [delegate managedObjectModel];
+        
+        NSDictionary *dict = @{@"DUE_DATE":self.managedTaskObject.dueDate};
+        NSFetchRequest *request = [managedObjectModel fetchRequestFromTemplateWithName:@"tasksDueSooner" substitutionVariables:dict];
+        NSError *error = nil;
+        NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+        for (Task *theTask in results) {
+            [message appendString:theTask.text];
+            [message appendString:@"\n"];
+        }
+        [alert setMessage:message];
+        [alert show];
+        
     }
 }
 

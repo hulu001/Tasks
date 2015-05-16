@@ -10,6 +10,7 @@
 #import "ViewTaskController.h"
 #import "Location.h"
 #import "Task.h"
+#import "LocationTasksViewController.h"
 @interface MasterViewController ()
 
 @end
@@ -218,12 +219,33 @@
  */
 
 - (IBAction)toolbarFilterAll:(id)sender {
+    NSFetchRequest *request = [self.fetchedResultsController fetchRequest];
+    [NSFetchedResultsController deleteCacheWithName:nil];
+    [request setPredicate:nil];
+    NSError *error;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        abort();
+    }
+    [self.tableView reloadData];
 }
 
 - (IBAction)locationButtonPressed:(id)sender {
+    LocationTasksViewController *locationTask = [[LocationTasksViewController alloc] initWithStyle:UITableViewStylePlain];
+    locationTask.managedObjectContext = self.managedObjectContext;
+    [self.navigationController pushViewController:locationTask animated:YES];
 }
 
 - (IBAction)toolbarFilterHiPri:(id)sender {
+    
+    NSFetchRequest *request = [self.fetchedResultsController fetchRequest];
+    [NSFetchedResultsController deleteCacheWithName:nil];
+    NSPredicate *requestPredicate = [NSPredicate predicateWithFormat:@"priority == 3"];
+    [request setPredicate:requestPredicate];
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        abort();
+    }
+    [self.tableView reloadData];
 }
 
 - (IBAction)toolbarSortOrderChanged:(id)sender {
